@@ -9,6 +9,9 @@ import org.apache.flink.configuration.Configuration;
 import org.apache.flink.streaming.api.functions.KeyedProcessFunction;
 import org.apache.flink.util.Collector;
 
+/*
+ * This Class implements KeyedProcessFunction#processElement, which detects the fraudulent transaction based on some rules
+ */
 
 public class DetailedFraudDetector extends KeyedProcessFunction<Long, DetailedTransaction, DetailedAlert> {
     private static final long serialVersionUID = 1L;
@@ -41,6 +44,10 @@ public class DetailedFraudDetector extends KeyedProcessFunction<Long, DetailedTr
         locationState = getRuntimeContext().getState(locationDescriptor);
     }
 
+    /*
+     * This method process every transaction to find out if it's fraudulent or not based on some rule
+     * Else set the state
+     */
     @Override
     public void processElement(
             DetailedTransaction transaction,

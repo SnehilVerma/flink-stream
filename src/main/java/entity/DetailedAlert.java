@@ -5,10 +5,16 @@
 
 package entity;
 
+/*
+ * This class creates Detailed Alert
+ */
 public final class DetailedAlert {
 
     private long accountId;
 
+    /*
+     * Return a string containing associated details with the alert
+     */
     @Override
     public String toString() {
         return "DetailedAlert{" +

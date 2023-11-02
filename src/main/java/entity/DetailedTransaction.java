@@ -10,6 +10,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Random;
 
+/*
+ * This class creates a detailed transaction with associated filed like accountId, timeStamp, amount and location
+ */
 public final class DetailedTransaction {
     private long accountId;
     private long timestamp;
@@ -20,7 +23,7 @@ public final class DetailedTransaction {
     private static final List<String> zips = Arrays.asList("01003", "02115", "78712");
 
 
-    //private static final List<String> zips = Arrays.asList("01003", "02115");
+    //private static final List<String> zips = Arrays.asList("01003");
     // Tested with 2 zipcodes for higher prob of same zipcodes on fraud txns. Got expected output.
     // In some trial, if the fraudulent txn got assigned same zip codes, an alert was shown.
     // In a trial, if the the fraudulent txn got assigned different zip codes, and an alert was not shown.
@@ -28,6 +31,7 @@ public final class DetailedTransaction {
     public DetailedTransaction() {
     }
 
+    //Constructor
     public DetailedTransaction(long accountId, long timestamp, double amount) {
         this.accountId = accountId;
         this.timestamp = timestamp;
@@ -35,9 +39,9 @@ public final class DetailedTransaction {
         Random r = new Random();
         int randomItem = r.nextInt(zips.size());
         this.zipcode = zips.get(randomItem);
-//        this.zipcode = "01003";
     }
 
+    //Getter and Setter for member fields
     public String getZipcode() {
         return zipcode;
     }
@@ -70,7 +74,9 @@ public final class DetailedTransaction {
         this.amount = amount;
     }
 
-
+    /*
+     * Check two transactions are equal or not
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

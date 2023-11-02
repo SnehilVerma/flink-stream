@@ -6,6 +6,9 @@ import org.apache.flink.streaming.api.functions.source.FromIteratorFunction;
 import java.io.Serializable;
 import java.util.Iterator;
 
+/*
+ * This class implements the rate limited iterator, which process transaction one by one
+ */
 public class DetailedTransactionSource extends FromIteratorFunction<DetailedTransaction> {
     private static final long serialVersionUID = 1L;
 
