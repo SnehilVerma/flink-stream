@@ -18,8 +18,10 @@ public final class DetailedTransaction {
     private long timestamp;
     private double amount;
 
+    //zipcode of transaction
     private String zipcode;
 
+    //For testing we limit our zipcodes only 3 values
     private static final List<String> zips = Arrays.asList("01003", "02115", "78712");
 
 
